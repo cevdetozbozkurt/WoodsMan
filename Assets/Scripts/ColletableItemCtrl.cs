@@ -7,7 +7,7 @@ public class ColletableItemCtrl : MonoBehaviour
     bool isAlreadyCollected = false;
 
     [SerializeField]
-    private PlayerInventory cltr;
+    private PlayerInventoryyy cltr;
 
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +16,7 @@ public class ColletableItemCtrl : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            cltr = other.GetComponent<PlayerInventory>();
+            cltr = other.GetComponent<PlayerInventoryyy>();
             if(this.tag == "Wood")
             {
                 cltr.Wood.Add(this.gameObject);
@@ -27,14 +27,14 @@ public class ColletableItemCtrl : MonoBehaviour
             
             if(this.CompareTag("Timber"))
             {
-                cltr = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+                cltr = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventoryyy>();
                 cltr.AddNewTimber(this.transform);
                 cltr.Timber.Add(this.gameObject);
                 this.GetComponent<BoxCollider>().enabled = false;
                 isAlreadyCollected = true;
             }
             if(this.CompareTag("Chair")){
-                cltr = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+                cltr = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventoryyy>();
                 cltr.AddNewChair(this.transform);
                 cltr.Chair.Add(this.gameObject);
                 this.GetComponent<SphereCollider>().enabled = false;

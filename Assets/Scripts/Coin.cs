@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) 
     {
-        PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+        PlayerInventoryyy playerInventory = other.GetComponent<PlayerInventoryyy>();
         if(playerInventory != null)
         {
             playerInventory.CoinCollected();

@@ -14,7 +14,7 @@ public class Store : MonoBehaviour
     private Transform shopTimberHolder;
     [SerializeField]
     private Transform shopChairHolder; //Chair Stack
-    private PlayerInventory playerInventory;
+    private PlayerInventoryyy playerInventory;
     private bool isCreating;
     private Coroutine createCoinCoroutine;
     private Coroutine createCoinCorountineChair;
@@ -29,7 +29,7 @@ public class Store : MonoBehaviour
     private List<GameObject> shopChairs = new List<GameObject>();
 
     private void Start() {
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventoryyy>();
     }
 
     public void JumpToShop(Transform WoodToAddForInsideFactory){

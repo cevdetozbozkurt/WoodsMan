@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 public class TimberController : MonoBehaviour
 {
-    private PlayerInventory playerInventory;
+    private PlayerInventoryyy playerInventory;
 
   
 

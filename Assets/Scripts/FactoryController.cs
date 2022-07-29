@@ -6,7 +6,7 @@ using System.Linq;
 public class FactoryController : MonoBehaviour
 {
     [SerializeField]
-    private PlayerInventory cltr;
+    private PlayerInventoryyy cltr;
     [SerializeField]
     private Transform takePosition; //alınan wood 
     [SerializeField]

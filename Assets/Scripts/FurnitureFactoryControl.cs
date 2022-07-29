@@ -23,7 +23,7 @@ public class FurnitureFactoryControl : MonoBehaviour
     private GameObject insideFactory;
     [SerializeField]
     private Animator animator ;
-    private PlayerInventory playerInventory;
+    private PlayerInventoryyy playerInventory;
     private bool isTrigger = false;
     private int numOfTimberInFactory = 0;
     private float newChairTransformX = 0f;
@@ -97,7 +97,7 @@ public class FurnitureFactoryControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")){
-            playerInventory = other.GetComponent<PlayerInventory>();
+            playerInventory = other.GetComponent<PlayerInventoryyy>();
             animator.SetBool("isPlayerIn",true);
             coroutineStacking = StartCoroutine(GetTimbers());
             if(TimberinFurniture.Count>=5) isActive = false;

@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 7280292507204554320}
   - component: {fileID: 7280292507204554321}
   - component: {fileID: 7280292507204554334}
-  - component: {fileID: 7280292507204554335}
-  - component: {fileID: 7280292507204554332}
   m_Layer: 0
   m_Name: Timber 1
   m_TagString: Timber
@@ -96,32 +94,7 @@ BoxCollider:
   m_GameObject: {fileID: 7280292507204554333}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020000009, y: 0.020000007, z: 0.019999996}
   m_Center: {x: -0.000000060070306, y: 0.000000013969839, z: -8.4703295e-22}
---- !u!114 &7280292507204554335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7280292507204554333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d19ae0b9e2258849952f20564347fa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7280292507204554332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7280292507204554333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e9a0a8b3f67eb4ea9ec673c339422c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cltr: {fileID: 0}

@@ -15,6 +15,7 @@ TagManager:
   - GetItem
   - Chair
   - Coin
+  - TimberArea
   layers:
   - Default
   - TransparentFX

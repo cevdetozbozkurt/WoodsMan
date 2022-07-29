@@ -40,9 +40,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1333333555}
+  - component: {fileID: 2138826270865726880}
   m_Layer: 0
   m_Name: Give Timber
-  m_TagString: Untagged
+  m_TagString: TimberArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,14 +55,27 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333333556}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.82, y: -0.659, z: 0.602}
-  m_LocalScale: {x: 0.29356924, y: 0.2935692, z: 0.29356918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8958100721477223360}
   m_RootOrder: 49
-  m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2138826270865726880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333333556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2413054, y: 0.6951479, z: 1.4650383}
+  m_Center: {x: -0.23358107, y: 0.2326501, z: 0.7245159}
 --- !u!1 &1860429062
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +86,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1860429061}
   - component: {fileID: 1860429060}
-  - component: {fileID: 1860429059}
   m_Layer: 0
   m_Name: Take Wood
   m_TagString: Take Woof
@@ -108,29 +121,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1860429059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860429062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22499683b1e2d104196e43515b9e664c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cltr: {fileID: 0}
-  takePosition: {fileID: 116673590}
-  backFactory: {fileID: 1333333555}
-  takeWoodForProcess: {fileID: 1932451137}
-  itemCtrl: {fileID: 1328946676474642349, guid: 146bc8f82f07a9c43b982270e7fd2b57,
-    type: 3}
-  Timber: {fileID: 1531615343662701538, guid: 9dce862d38cc3f443bd9df6c93b01d44, type: 3}
-  itemsInFactory: []
-  numOfWoodInFactory: 0
-  backTimber: 0
-  backTimberForTransform: 0
 --- !u!1 &1932451136
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932451136}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0, y: -0.659, z: -0.79}
+  m_LocalPosition: {x: -0, y: -0.659, z: -0.78}
   m_LocalScale: {x: 0.29356924, y: 0.2935692, z: 0.29356918}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3740,6 +3730,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8958100721477223360}
+  - component: {fileID: 1815184590}
+  - component: {fileID: 1815184591}
   m_Layer: 0
   m_Name: Sawmill
   m_TagString: Untagged
@@ -3813,6 +3805,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1815184590
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582244094416411002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.72, y: 1.51, z: 1}
+  m_Center: {x: 0.34, y: 0, z: 0}
+--- !u!114 &1815184591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582244094416411002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39e86bdf4561e247aada9578934c028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList: []
+  itemPrefab: {fileID: 7280292507204554333, guid: 406114f7ae2bb2841943eb1f2f0c6f0d,
+    type: 3}
+  exitPoint: {fileID: 1333333555}
+  itemRotation: {x: 90, y: -90, z: 0}
+  increasedPositionY: 0
+  increasedValueY: 0.065
+  itemCountForWorking: 20
 --- !u!1 &8684035546397622600
 GameObject:
   m_ObjectHideFlags: 0
