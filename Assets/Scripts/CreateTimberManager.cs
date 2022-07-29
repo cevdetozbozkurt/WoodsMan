@@ -15,7 +15,7 @@ public class CreateTimberManager : MonoBehaviour
     public float increasedPositionY;
     public float increasedValueY = 0.2f;
     public int itemCountForWorking = 20;
-    public bool isWorking;
+    public bool isWorking = false;
     
 
     private void Start() {
@@ -39,8 +39,9 @@ public class CreateTimberManager : MonoBehaviour
                 temp.transform.localRotation = Quaternion.Euler(itemRotation);
                 temp.transform.SetParent(exitPoint);
                 timberList.Add(temp);
-                if(timberList.Count > collectManager.woodList.Count - 1) {isWorking = false;}
+                
             }
+            if(timberList.Count > collectManager.woodList.Count) {isWorking = false;}
             yield return new WaitForSecondsRealtime(0.5f);
         }
     }

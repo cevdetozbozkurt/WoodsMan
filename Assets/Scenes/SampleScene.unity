@@ -1786,6 +1786,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153670503}
   m_CullTransparentMesh: 1
+--- !u!4 &1206175479 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138826270865726878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1214817285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 722548668, guid: 7b049d6ff4565d74f85ee344a5a0899d,
@@ -3571,6 +3577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1815184591, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: collectManager
+      value: 
+      objectReference: {fileID: 5866666020968081157}
     - target: {fileID: 1860429062, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
       propertyPath: m_TagString
       value: WoodArea
@@ -3677,7 +3687,7 @@ MonoBehaviour:
   woodPoint: {fileID: 78698314}
   timberPoint: {fileID: 1271532337}
   chairPoint: {fileID: 1214817285}
-  giveWoodPoint: {fileID: 0}
+  giveWoodPoint: {fileID: 1206175479}
   timberLimit: 30
   woodLimit: 30
   chairLimit: 2
@@ -3695,7 +3705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectManager: {fileID: 5866666020968081157}
-  createTimberManager: {fileID: 0}
+  createTimberManager: {fileID: 1815184591}
   wood: {fileID: 0}
   isCollecting: 0
   isGiving: 0

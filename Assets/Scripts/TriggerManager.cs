@@ -46,16 +46,16 @@ public class TriggerManager : MonoBehaviour
             isCollecting = true;
             Debug.Log("calisti");
         }
-        if(other.gameObject.CompareTag("WoodArea")){
-            isGiving = true;
-            createTimberManager.isWorking = true;
-        }
     }
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Wood")){
             wood = other.gameObject;
             collectManager.GetWood();
+        }
+        if(other.gameObject.CompareTag("WoodArea")){
+            isGiving = true;
+            createTimberManager.isWorking = true;
         }
     }
 

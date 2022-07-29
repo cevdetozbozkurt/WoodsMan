@@ -14,6 +14,7 @@ public class CollectManager : MonoBehaviour
 
     [SerializeField]
     private TriggerManager triggerManager;
+    private SawMillManager sawMillManager = new SawMillManager();
     private ItemJumpManager itemJumpManager = new ItemJumpManager();
     public GameObject woodPref,timberPref,chairPref;
     //public GameObject deskPref;
@@ -22,6 +23,12 @@ public class CollectManager : MonoBehaviour
     //public Transform deskPoint;
     public int timberLimit = 30, woodLimit = 5, chairLimit = 2, deskLimit = 1;
 
+    public void RemoveLast(List<GameObject> list){
+        if(list.Count > 0){
+            Destroy(list[list.Count-1]);
+            list.RemoveAt(list.Count -1);
+        }
+    }
 
     private void OnEnable() {
         TriggerManager.OnTimberCollect += GetTimber; 
@@ -52,7 +59,11 @@ public class CollectManager : MonoBehaviour
     void GiveWood(){
         if(woodList.Count > 0){
             itemJumpManager.AddNewItem(woodList[woodList.Count-1].transform,giveWoodPoint,0.25f);
-            
+            sawMillManager.sawMillWoods.Add(woodList[woodList.Count - 1]);
+            woodList.RemoveAt(woodList.Count -1);
+        }
+        if(woodList.Count == 0 && sawMillManager.sawMillWoods.Count>0){
+            RemoveLast(sawMillManager.sawMillWoods);
         }
     }
 
