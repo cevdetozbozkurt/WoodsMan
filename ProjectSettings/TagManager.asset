@@ -16,6 +16,7 @@ TagManager:
   - Chair
   - Coin
   - TimberArea
+  - WoodArea
   layers:
   - Default
   - TransparentFX

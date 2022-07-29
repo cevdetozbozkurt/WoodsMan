@@ -5,13 +5,17 @@ using UnityEngine;
 public class CreateTimberManager : MonoBehaviour
 {
     public List<GameObject> timberList = new List<GameObject>();
+
+    [SerializeField]
+    private CollectManager collectManager;
+
     public GameObject itemPrefab;
     public Transform exitPoint;
     public Vector3 itemRotation;
     public float increasedPositionY;
     public float increasedValueY = 0.2f;
     public int itemCountForWorking = 20;
-    bool isWorking = true;
+    public bool isWorking;
     
 
     private void Start() {
@@ -35,9 +39,8 @@ public class CreateTimberManager : MonoBehaviour
                 temp.transform.localRotation = Quaternion.Euler(itemRotation);
                 temp.transform.SetParent(exitPoint);
                 timberList.Add(temp);
-                if(timberList.Count > itemCountForWorking - 1) {isWorking = false;}
+                if(timberList.Count > collectManager.woodList.Count - 1) {isWorking = false;}
             }
-            else if(timberList.Count < itemCountForWorking - 1) {isWorking = true;}
             yield return new WaitForSecondsRealtime(0.5f);
         }
     }

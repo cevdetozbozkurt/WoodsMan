@@ -7,11 +7,20 @@ public class TriggerManager : MonoBehaviour
     public delegate void OnCollectTimberArea();
     public static event OnCollectTimberArea OnTimberCollect;
 
-    bool isCollecting;
-    bool isGiving;
+    public delegate void OnGiveWoodArea();
+    public static event OnGiveWoodArea OnGiveWood;
+
+    [SerializeField]
+    private CollectManager collectManager;
+    [SerializeField]
+    private CreateTimberManager createTimberManager;
+    public GameObject wood;
+    public bool isCollecting;
+    public bool isGiving;
 
     private void Start() {
         StartCoroutine(CollectTimberEnum());
+        StartCoroutine(GiveWoodEnum());
     }
 
     IEnumerator CollectTimberEnum(){
@@ -23,23 +32,40 @@ public class TriggerManager : MonoBehaviour
         }
     }
 
+    IEnumerator GiveWoodEnum(){
+        while(true){
+            if(isGiving){
+                OnGiveWood();
+            }
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
     private void OnTriggerStay(Collider other) {
         if(other.gameObject.CompareTag("TimberArea")){
             isCollecting = true;
             Debug.Log("calisti");
         }
-        // if(other.gameObject.CompareTag("WoodArea")){
-        //     isGiving = true;
-        // }
+        if(other.gameObject.CompareTag("WoodArea")){
+            isGiving = true;
+            createTimberManager.isWorking = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("Wood")){
+            wood = other.gameObject;
+            collectManager.GetWood();
+        }
     }
 
     private void OnTriggerExit(Collider other) {
         if(other.gameObject.CompareTag("TimberArea")){
             isCollecting = false;
         }
-        // if(other.gameObject.CompareTag("WoodArea")){
-        //     isGiving = false;
-        // }
+        if(other.gameObject.CompareTag("WoodArea")){
+            isGiving = false;
+        }
     }
 
 }
