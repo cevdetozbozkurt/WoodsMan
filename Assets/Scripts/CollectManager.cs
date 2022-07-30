@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CollectManager : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class CollectManager : MonoBehaviour
 
     [SerializeField]
     private TriggerManager triggerManager;
-    private SawMillManager sawMillManager = new SawMillManager();
+    [SerializeField]
+    private SawMillManager sawMillManager;
     private ItemJumpManager itemJumpManager = new ItemJumpManager();
     public GameObject woodPref,timberPref,chairPref;
     //public GameObject deskPref;
@@ -25,8 +27,8 @@ public class CollectManager : MonoBehaviour
 
     public void RemoveLast(List<GameObject> list){
         if(list.Count > 0){
-            Destroy(list[list.Count-1]);
-            list.RemoveAt(list.Count -1);
+            Destroy(list.Last());
+            list.Remove(list.Last());
         }
     }
 
@@ -58,12 +60,9 @@ public class CollectManager : MonoBehaviour
 
     void GiveWood(){
         if(woodList.Count > 0){
-            itemJumpManager.AddNewItem(woodList[woodList.Count-1].transform,giveWoodPoint,0.25f);
+            itemJumpManager.AddNewItem(woodList[woodList.Count-1].transform,giveWoodPoint,0.85f);
             sawMillManager.sawMillWoods.Add(woodList[woodList.Count - 1]);
-            woodList.RemoveAt(woodList.Count -1);
-        }
-        if(woodList.Count == 0 && sawMillManager.sawMillWoods.Count>0){
-            RemoveLast(sawMillManager.sawMillWoods);
+            woodList.Remove(woodList.Last());
         }
     }
 

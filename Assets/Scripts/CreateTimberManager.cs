@@ -7,7 +7,7 @@ public class CreateTimberManager : MonoBehaviour
     public List<GameObject> timberList = new List<GameObject>();
 
     [SerializeField]
-    private CollectManager collectManager;
+    private SawMillManager sawMillManager;
 
     public GameObject itemPrefab;
     public Transform exitPoint;
@@ -39,9 +39,8 @@ public class CreateTimberManager : MonoBehaviour
                 temp.transform.localRotation = Quaternion.Euler(itemRotation);
                 temp.transform.SetParent(exitPoint);
                 timberList.Add(temp);
-                
+                if(sawMillManager.sawMillWoods.Count == 0) isWorking = false;
             }
-            if(timberList.Count > collectManager.woodList.Count) {isWorking = false;}
             yield return new WaitForSecondsRealtime(0.5f);
         }
     }

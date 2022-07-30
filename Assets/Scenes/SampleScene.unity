@@ -2781,12 +2781,31 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2138826270865726878}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1816307965}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b39e86bdf4561e247aada9578934c028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1816307965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8582244094416411002, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138826270865726878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1816307968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816307965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae97a954dbdf5a49aa56329d5b0619a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sawMillWoods: []
 --- !u!4 &1909379568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1432808887178172772, guid: c27b0b4329d9a1641bc194e1e14b5a40,
@@ -3577,10 +3596,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.525
+      objectReference: {fileID: 0}
+    - target: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 116673590, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1815184591, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
       propertyPath: collectManager
       value: 
       objectReference: {fileID: 5866666020968081157}
+    - target: {fileID: 1815184591, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
+      propertyPath: sawMillManager
+      value: 
+      objectReference: {fileID: 1816307968}
     - target: {fileID: 1860429062, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1, type: 3}
       propertyPath: m_TagString
       value: WoodArea
@@ -3618,17 +3673,17 @@ PrefabInstance:
     - target: {fileID: 8958100721477223360, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8958100721477223360, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8958100721477223360, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8958100721477223360, guid: fc1d3f51ac959434d8b9e0cbbe1e22d1,
         type: 3}
@@ -3678,6 +3733,7 @@ MonoBehaviour:
   woodList: []
   createTimberManager: {fileID: 1815184591}
   triggerManager: {fileID: 5866666020968081158}
+  sawMillManager: {fileID: 1816307968}
   woodPref: {fileID: 3840103305641808790, guid: 146bc8f82f07a9c43b982270e7fd2b57,
     type: 3}
   timberPref: {fileID: 7280292507204554333, guid: 406114f7ae2bb2841943eb1f2f0c6f0d,
@@ -3706,6 +3762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectManager: {fileID: 5866666020968081157}
   createTimberManager: {fileID: 1815184591}
+  sawMillManager: {fileID: 1816307968}
   wood: {fileID: 0}
   isCollecting: 0
   isGiving: 0

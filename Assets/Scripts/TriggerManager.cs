@@ -14,6 +14,8 @@ public class TriggerManager : MonoBehaviour
     private CollectManager collectManager;
     [SerializeField]
     private CreateTimberManager createTimberManager;
+    [SerializeField]
+    private SawMillManager sawMillManager;
     public GameObject wood;
     public bool isCollecting;
     public bool isGiving;
@@ -55,7 +57,7 @@ public class TriggerManager : MonoBehaviour
         }
         if(other.gameObject.CompareTag("WoodArea")){
             isGiving = true;
-            createTimberManager.isWorking = true;
+            if(collectManager.woodList.Count == 0 && sawMillManager.sawMillWoods.Count > 0) createTimberManager.isWorking = true;
         }
     }
 
@@ -65,6 +67,7 @@ public class TriggerManager : MonoBehaviour
         }
         if(other.gameObject.CompareTag("WoodArea")){
             isGiving = false;
+            if(sawMillManager.sawMillWoods.Count > 0) createTimberManager.isWorking = true;
         }
     }
 
