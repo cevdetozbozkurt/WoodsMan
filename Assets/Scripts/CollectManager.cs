@@ -12,17 +12,20 @@ public class CollectManager : MonoBehaviour
 
     [SerializeField]
     private CreateTimberManager createTimberManager;
+    [SerializeField]
+    private CreateChairManager createChair;
 
     [SerializeField]
     private TriggerManager triggerManager;
     [SerializeField]
     private SawMillManager sawMillManager;
+    [SerializeField]
+    private FurnitureManager furniture;
+
     private ItemJumpManager itemJumpManager = new ItemJumpManager();
     public GameObject woodPref,timberPref,chairPref;
-    //public GameObject deskPref;
     public Transform woodPoint,timberPoint,chairPoint;
-    public Transform giveWoodPoint;
-    //public Transform deskPoint;
+    public Transform giveWoodPoint,giveTimberPoint;
     public int timberLimit = 30, woodLimit = 5, chairLimit = 2, deskLimit = 1;
 
     public void RemoveLast(List<GameObject> list){
@@ -35,18 +38,24 @@ public class CollectManager : MonoBehaviour
     private void OnEnable() {
         TriggerManager.OnTimberCollect += GetTimber; 
         TriggerManager.OnGiveWood += GiveWood;
+        TriggerManager.OnGiveTimber += GiveTimber;
+        TriggerManager.OnChairCollect += GetChair;
+        
     }
 
     private void OnDisable() {
         TriggerManager.OnTimberCollect -= GetTimber;
         TriggerManager.OnGiveWood -= GiveWood;
+        TriggerManager.OnGiveTimber -= GiveTimber;
+        TriggerManager.OnChairCollect -= GetChair;
     }
+
 
     void GetTimber(){
         if(timberList.Count <= timberLimit){
-            timberList.Add(createTimberManager.timberList[createTimberManager.timberList.Count-1]);
+            timberList.Add(createTimberManager.timberList.Last());
             createTimberManager.timberList.RemoveAt(createTimberManager.timberList.Count - 1);
-            itemJumpManager.AddNewItem(timberList[timberList.Count -1].transform,timberPoint,0.065f);
+            itemJumpManager.AddNewTimber(timberList[timberList.Count -1].transform,timberPoint,0.065f,timberList.Count);
         }
     }
 
@@ -54,16 +63,44 @@ public class CollectManager : MonoBehaviour
         if(woodList.Count <= woodLimit){
             woodList.Add(triggerManager.wood);
             triggerManager.wood.GetComponent<CapsuleCollider>().enabled = false;
-            itemJumpManager.AddNewItem(triggerManager.wood.transform,woodPoint,0.25f);
+            itemJumpManager.AddNewWood(triggerManager.wood.transform,woodPoint,0.25f,woodList.Count);
+        }
+    }
+
+    public void GetChair()
+    {
+        if(chairList.Count <= chairLimit)
+        {
+            chairList.Add(createChair.itemList.Last());
+            createChair.itemList.Remove(createChair.itemList.Last());
+            chairList.Last().GetComponent<SphereCollider>().enabled = false;
+            chairList.Last().GetComponent<MeshCollider>().enabled = false;
+            chairList.Last().GetComponent<Rigidbody>().useGravity = false;
+            chairList.Last().GetComponent<Rigidbody>().isKinematic = true;
+            itemJumpManager.AddNewChair(chairList.Last().transform, chairPoint, 1f, chairList.Count);
         }
     }
 
     void GiveWood(){
         if(woodList.Count > 0){
-            itemJumpManager.AddNewItem(woodList[woodList.Count-1].transform,giveWoodPoint,0.85f);
+            itemJumpManager.AddNewWood(woodList[woodList.Count-1].transform,giveWoodPoint,0.85f,sawMillManager.sawMillWoods.Count);
             sawMillManager.sawMillWoods.Add(woodList[woodList.Count - 1]);
             woodList.Remove(woodList.Last());
         }
     }
 
+    void GiveTimber()
+    {
+        if (timberList.Count > 0)
+        {
+            itemJumpManager.AddNewTimberForFurniture(timberList.Last().transform, giveTimberPoint, 0.3f, furniture.FurnitureTimber.Count);
+            furniture.FurnitureTimber.Add(timberList.Last());
+            timberList.Remove(timberList.Last());
+        }
+    }
+
+    void GiveChair()
+    {
+
+    }
 }

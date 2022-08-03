@@ -6,10 +6,10 @@ public class Coin : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) 
     {
-        PlayerInventoryyy playerInventory = other.GetComponent<PlayerInventoryyy>();
-        if(playerInventory != null)
+        BuyManager buyManager = other.GetComponent<BuyManager>();
+        if(buyManager != null)
         {
-            playerInventory.CoinCollected();
+            buyManager.CoinCollected();
             gameObject.SetActive(false);
             Destroy(gameObject);
         }    

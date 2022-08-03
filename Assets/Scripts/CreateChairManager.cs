@@ -8,10 +8,11 @@ public class CreateChairManager : MonoBehaviour
     public GameObject itemPrefab;
     public Transform exitPoint;
     public Vector3 itemRotation;
-    public float increasedPositionZ;
-    public float increasedValueY = 0.2f;
+    public float increasedPositionX;
+    public float increasedValueX = 0.2f;
     public int itemCountForWorking = 20;
-    bool isWorking = true;
+    public bool isWorking;
+    public FurnitureManager furniture;
     
 
     private void Start() {
@@ -26,18 +27,24 @@ public class CreateChairManager : MonoBehaviour
     }
 
     IEnumerator CreateItem(){
-        increasedPositionZ = exitPoint.position.z;
+        increasedPositionX = exitPoint.position.x - 0.5f;
         while(true){
-            if(isWorking){
-                if(((float)itemList.Count%5) == 0) increasedPositionZ -= increasedValueY;
+            if(isWorking && furniture.FurnitureTimber.Count >= 5 && itemList.Count < 10){
                 GameObject temp = Instantiate(itemPrefab);
-                temp.transform.position = new Vector3(exitPoint.position.x+ (1f * ((float)itemList.Count%5)), exitPoint.position.y, increasedPositionZ);
+                temp.transform.position = new Vector3(increasedPositionX, exitPoint.position.y, exitPoint.position.z - (1f * (itemList.Count % 5)));
                 temp.transform.localRotation = Quaternion.Euler(itemRotation);
                 temp.transform.SetParent(exitPoint);
                 itemList.Add(temp);
-                if(itemList.Count > itemCountForWorking - 1) {isWorking = false;}
+                Debug.Log(furniture.FurnitureTimber.Count);
+                if ((itemList.Count % 5) == 0) increasedPositionX -= increasedValueX;
+                if (itemList.Count % 1 == 0)
+                {
+                    for(int i = 0; i < 5; i++)
+                    {
+                        RemoveLast(furniture.FurnitureTimber);
+                    }
+                }
             }
-            else if(itemList.Count < itemCountForWorking - 1) {isWorking = true;}
             yield return new WaitForSecondsRealtime(0.5f);
         }
     }

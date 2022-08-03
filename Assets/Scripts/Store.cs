@@ -14,7 +14,7 @@ public class Store : MonoBehaviour
     private Transform shopTimberHolder;
     [SerializeField]
     private Transform shopChairHolder; //Chair Stack
-    private PlayerInventoryyy playerInventory;
+    private CollectManager playerInventory;
     private bool isCreating;
     private Coroutine createCoinCoroutine;
     private Coroutine createCoinCorountineChair;
@@ -29,7 +29,7 @@ public class Store : MonoBehaviour
     private List<GameObject> shopChairs = new List<GameObject>();
 
     private void Start() {
-        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventoryyy>();
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<CollectManager>();
     }
 
     public void JumpToShop(Transform WoodToAddForInsideFactory){
@@ -62,22 +62,20 @@ public class Store : MonoBehaviour
     }
 
     IEnumerator GetTimbers(){
-        while(playerInventory.Timber.Count > 0){
-            JumpToShop(playerInventory.Timber.Last().transform);
-            shopTimber.Add(playerInventory.Timber.Last());
-            playerInventory.Timber.Remove(playerInventory.Timber.Last());
-            playerInventory.items["Timber"]--;
+        while(playerInventory.timberList.Count > 0){
+            JumpToShop(playerInventory.timberList.Last().transform);
+            shopTimber.Add(playerInventory.timberList.Last());
+            playerInventory.timberList.Remove(playerInventory.timberList.Last());
             yield return new WaitForSeconds(0.1f);
         }
     }
 
     IEnumerator GetChairs(){
-        while(playerInventory.Chair.Count > 0){
-            StartCoroutine(JumpToShopChair(playerInventory.Chair.Last().transform));
+        while(playerInventory.chairList.Count > 0){
+            StartCoroutine(JumpToShopChair(playerInventory.chairList.Last().transform));
             yield return new WaitForSeconds(0.3f);
-            shopChairs.Add(playerInventory.Chair.Last());
-            playerInventory.Chair.Remove(playerInventory.Chair.Last());
-            playerInventory.items["Chair"]--;
+            shopChairs.Add(playerInventory.chairList.Last());
+            playerInventory.chairList.Remove(playerInventory.chairList.Last());
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -102,11 +100,11 @@ public class Store : MonoBehaviour
             isActiveChair = true;
             for(int i = 0;i<9;i++){
                 Instantiate(coin,coinTransform.position,Quaternion.identity);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.2f);
             }
             Destroy(shopChairs.Last());
             shopChairs.Remove(shopChairs.Last());
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.2f);
             isActiveChair = false;
         }
     }
@@ -114,9 +112,9 @@ public class Store : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player"))
         {
-            if(playerInventory.items["Timber"] > 0) StartCoroutine(GetTimbers());
+            if(playerInventory.timberList.Count > 0) StartCoroutine(GetTimbers());
 
-            if(playerInventory.items["Chair"] > 0) StartCoroutine(GetChairs());
+            if(playerInventory.chairList.Count > 0) StartCoroutine(GetChairs());
 
         }
     }

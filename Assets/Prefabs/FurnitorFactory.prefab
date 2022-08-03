@@ -137,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648633713709915998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.44, y: 0, z: 0}
+  m_LocalPosition: {x: 18.44, y: 0, z: 7.256}
   m_LocalScale: {x: 1.4631996, y: 1.4631996, z: 1.4631996}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648633714023802022}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.13, y: 0, z: -4.29}
+  m_LocalPosition: {x: -1.17, y: -0, z: -4.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 648633714205988470}
   m_Layer: 0
   m_Name: Timber Al
-  m_TagString: Untagged
+  m_TagString: ChairArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648633714205988464}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.3, z: -2.64}
+  m_LocalPosition: {x: -0.05, y: 0.3, z: -4.61}
   m_LocalScale: {x: 1.4631994, y: 1.4631996, z: 1.4631994}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -233,7 +233,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.93, y: 0.18, z: 8.75}
+  m_Size: {x: 5.6, y: 0.18, z: 8.75}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &648633714205988470
 MonoBehaviour:
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648633714205988464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5780c9f36033db049b1325b9392551be, type: 3}
   m_Name: 
@@ -254,6 +254,10 @@ MonoBehaviour:
   newChairTransform: {fileID: 648633715366245083}
   Chair: {fileID: 2270432401924925124, guid: 9663d1d0ff5f7a14f9a17f1a5774a989, type: 3}
   insideFactory: {fileID: 648633713709915998}
+  animator: {fileID: 65010121517668855}
+  creatingChairDuration: 1
+  TimberinFurniture: []
+  Chairs: []
 --- !u!1 &648633714450852728
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648633714450852729}
   - component: {fileID: 648633714450852734}
+  - component: {fileID: 381721895}
   m_Layer: 0
   m_Name: Mobilya Alis
   m_TagString: Mobilya Ver
@@ -279,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648633714450852728}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.13, y: 0.13864975, z: 3.16}
+  m_LocalPosition: {x: -0.05, y: 0.13864975, z: 4.83}
   m_LocalScale: {x: 1.4631996, y: 1.4631996, z: 1.4631996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -298,8 +303,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.28, y: 0.18, z: 8.74}
+  m_Size: {x: 5.6, y: 0.18, z: 8.74}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &381721895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648633714450852728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa89bd69e52d3f848a32081a517165de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1059608245}
 --- !u!1 &648633715366245082
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,8 +342,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648633715366245082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.891, y: 0, z: -4.109}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.67, y: 0, z: -4.11}
+  m_LocalScale: {x: 1.9200023, y: 1.9200023, z: 1.9200023}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 648633714450852729}
@@ -343,6 +361,7 @@ GameObject:
   - component: {fileID: 681452873497677278}
   - component: {fileID: 672044325431756814}
   - component: {fileID: 713432075280457554}
+  - component: {fileID: 65010121517668855}
   m_Layer: 0
   m_Name: Entry
   m_TagString: Untagged
@@ -430,6 +449,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.5536613, y: 3.3156645, z: 0.072123416}
   m_Center: {x: 0, y: 1.6578323, z: 0}
+--- !u!95 &65010121517668855
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649561886795554032}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 55e52c2571cf26142a5f5796b4f17129, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &649639649834173166
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 652969251277216024}
+  - component: {fileID: 338553233}
   m_Layer: 0
   m_Name: FurnitorFactory
   m_TagString: Untagged
@@ -1007,7 +1047,7 @@ Transform:
   m_GameObject: {fileID: 649769904809558602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27, y: 1.5282854, z: 5.4}
-  m_LocalScale: {x: 0.69779867, y: 0.69779867, z: 0.69779867}
+  m_LocalScale: {x: 0.35435787, y: 0.35435787, z: 0.35435787}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 652912301879314292}
@@ -1019,6 +1059,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &338553233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649769904809558602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea37364c5ef58fa488f0079e953197e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList: []
+  itemPrefab: {fileID: 2270432401924925124, guid: 9663d1d0ff5f7a14f9a17f1a5774a989,
+    type: 3}
+  exitPoint: {fileID: 648633715366245083}
+  itemRotation: {x: 0, y: 180, z: 0}
+  increasedPositionZ: 0
+  increasedValueY: 1
+  itemCountForWorking: 7
 --- !u!1 &649806352718297790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,6 +3192,7 @@ GameObject:
   - component: {fileID: 319386122638772326}
   - component: {fileID: 226042828577122075}
   - component: {fileID: 1349099222350990624}
+  - component: {fileID: 1059608245}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -3219,6 +3280,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.5536613, y: 3.3156645, z: 0.072123416}
   m_Center: {x: 0, y: 1.6578323, z: 0}
+--- !u!95 &1059608245
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585632664030818406}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e240ff90169279e4ca25983a302fb675, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4087621472817847946
 GameObject:
   m_ObjectHideFlags: 0

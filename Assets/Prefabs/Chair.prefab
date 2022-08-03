@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1887954318430770045}
   - component: {fileID: 3307110625275185511}
   - component: {fileID: 265214544}
-  - component: {fileID: 265214550}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Chair
@@ -130,16 +129,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 58.1
   m_Center: {x: 0, y: 41.5143, z: 0}
---- !u!114 &265214550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2270432401924925124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e9a0a8b3f67eb4ea9ec673c339422c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cltr: {fileID: 0}

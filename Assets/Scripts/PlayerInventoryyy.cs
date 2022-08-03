@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.Events;
+
 public class PlayerInventoryyy : MonoBehaviour
 {
     [SerializeField]
@@ -20,8 +20,7 @@ public class PlayerInventoryyy : MonoBehaviour
     public List<GameObject> Wood = new List<GameObject>();
     public List<GameObject> Timber = new List<GameObject>();
     public List<GameObject> Chair = new List<GameObject>();
-    public int numOfCoins {get; private set;}
-    public UnityEvent<PlayerInventoryyy> OnCoinCollected;
+    
     private void Start()
     {
         items.Add("Wood", 0);
@@ -29,10 +28,7 @@ public class PlayerInventoryyy : MonoBehaviour
         items.Add("Chair", 0);
     }
 
-    public void CoinCollected(){
-        numOfCoins++;
-        OnCoinCollected.Invoke(this);
-    }
+    
 
     public void AddNewWood(Transform woodToAdd)
     {

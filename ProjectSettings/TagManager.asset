@@ -17,6 +17,10 @@ TagManager:
   - Coin
   - TimberArea
   - WoodArea
+  - BuyArea
+  - ChairArea
+  - GiveWoodPosition
+  - TakingChairArea
   layers:
   - Default
   - TransparentFX

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722548667}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.02, y: 0.14, z: 0.8}
+  m_LocalPosition: {x: -0.02, y: -0.25, z: 0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54,14 +54,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638739838}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -0, y: -0.24, z: -0.669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2488491348930719555}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!1 &114154980586161960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +2671,10 @@ GameObject:
   - component: {fileID: 8986002057078344264}
   - component: {fileID: 3305119769475874905}
   - component: {fileID: 3305119769475874906}
+  - component: {fileID: 5866666020968081151}
+  - component: {fileID: 5866666020968081157}
+  - component: {fileID: 5866666020968081158}
+  - component: {fileID: 5866666020968081165}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2729,7 +2733,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &8986002057078344265
 BoxCollider:
@@ -2740,7 +2744,7 @@ BoxCollider:
   m_GameObject: {fileID: 8103621231879028888}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 2.1904905, z: 1}
   m_Center: {x: 0, y: 1.0952452, z: 0}
@@ -2766,7 +2770,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8103621231879028888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55ae283995c60c6498775ffc6e3d3f46, type: 3}
   m_Name: 
@@ -2779,21 +2783,6 @@ MonoBehaviour:
   Wood: []
   Timber: []
   Chair: []
-  OnCoinCollected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
-        m_MethodName: UpdateCoinText
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3305119769475874906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2810,6 +2799,98 @@ MonoBehaviour:
   pc: {fileID: 8986002057078344264}
   treecontroller: {fileID: 0}
   isPlayerIn: 0
+--- !u!136 &5866666020968081151
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103621231879028888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5145626
+  m_Height: 2.2585568
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!114 &5866666020968081157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103621231879028888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72786eb8c90aee44ca736740b7ddf9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timberList: []
+  chairList: []
+  woodList: []
+  createTimberManager: {fileID: 0}
+  triggerManager: {fileID: 5866666020968081158}
+  sawMillManager: {fileID: 0}
+  woodPref: {fileID: 3840103305641808790, guid: 146bc8f82f07a9c43b982270e7fd2b57,
+    type: 3}
+  timberPref: {fileID: 7280292507204554333, guid: 406114f7ae2bb2841943eb1f2f0c6f0d,
+    type: 3}
+  chairPref: {fileID: 2270432401924925124, guid: 9663d1d0ff5f7a14f9a17f1a5774a989,
+    type: 3}
+  woodPoint: {fileID: 8986002056162303913}
+  timberPoint: {fileID: 1638739839}
+  chairPoint: {fileID: 722548668}
+  giveWoodPoint: {fileID: 0}
+  timberLimit: 30
+  woodLimit: 30
+  chairLimit: 2
+  deskLimit: 1
+--- !u!114 &5866666020968081158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103621231879028888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f24ae6e4bfef094eb9717bb586c9d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectManager: {fileID: 5866666020968081157}
+  createTimberManager: {fileID: 0}
+  sawMillManager: {fileID: 0}
+  wood: {fileID: 0}
+  isCollecting: 0
+  isGiving: 0
+  isCreatingChair: 0
+--- !u!114 &5866666020968081165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103621231879028888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e7368d22dcbd04e896254d073eeee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCoinCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: UpdateCoinText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8150973316009774400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,14 +3140,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8986002056162303912}
-  m_LocalRotation: {x: 0, y: -0.70710677, z: -0.70710677, w: 0}
-  m_LocalPosition: {x: 0, y: -0.24, z: -0.452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.24, z: -0.443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2488491348930719555}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -90, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9220970218154477482
 GameObject:
   m_ObjectHideFlags: 0

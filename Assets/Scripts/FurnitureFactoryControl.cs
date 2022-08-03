@@ -107,7 +107,6 @@ public class FurnitureFactoryControl : MonoBehaviour
         if(other.CompareTag("Player")){
             isTrigger = false;
             animator.SetBool("isPlayerIn",false);
-            StopCoroutine(coroutineStacking);
         }
     }
 
