@@ -17,19 +17,19 @@ public class BuyArea : MonoBehaviour
     }
 
     public void Buy(int goldAmount){
-        if (progress == 1)
-        {
-            this.GetComponent<BoxCollider>().enabled = false;
-            buyGameObject.SetActive(false);
-            this.enabled = false;
-            sawmillGameObject.SetActive(true);
-        }
-        else
+        if (progress != 1)
         {
             currentMoney += goldAmount;
             progress = (float)currentMoney / (float)cost;
             progressImage.fillAmount = progress;
             coinText.text = currentMoney.ToString() + "/" + cost.ToString();
+        }
+        if(currentMoney == cost)
+        {
+            this.GetComponent<BoxCollider>().enabled = false;
+            buyGameObject.SetActive(false);
+            this.enabled = false;
+            sawmillGameObject.SetActive(true);
         }
     }
 
