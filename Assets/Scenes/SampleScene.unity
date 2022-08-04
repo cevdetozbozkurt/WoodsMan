@@ -1690,10 +1690,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuyNewFurniture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3180552905424856823, guid: c4862d80489f2a64cb2dc438f50a1550,
+        type: 3}
+      propertyPath: cost
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3181655287250767766, guid: c4862d80489f2a64cb2dc438f50a1550,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4862d80489f2a64cb2dc438f50a1550, type: 3}
@@ -2629,6 +2634,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3126115745227504378, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
+      propertyPath: cost
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
       propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2768,10 +2778,15 @@ PrefabInstance:
       propertyPath: OnCoinCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 278087379}
+    - target: {fileID: 3180552905424856823, guid: c4862d80489f2a64cb2dc438f50a1550,
+        type: 3}
+      propertyPath: cost
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3181655287250767766, guid: c4862d80489f2a64cb2dc438f50a1550,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4862d80489f2a64cb2dc438f50a1550, type: 3}
