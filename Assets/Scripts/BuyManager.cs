@@ -8,7 +8,8 @@ public class BuyManager : MonoBehaviour
 
     public int numOfCoins {get; private set;}
     public UnityEvent<BuyManager> OnCoinCollected;
-
+    public UnityEvent<BuyManager> OnBuying;
+    /*
     private void OnEnable() {
         TriggerManager.OnBuyingSawmill += BuyArea; 
     }
@@ -25,6 +26,14 @@ public class BuyManager : MonoBehaviour
                 numOfCoins--;
             }
         }
+    }
+    */
+
+
+    public void BuyProcess()
+    {
+        numOfCoins--;
+        OnCoinCollected.Invoke(this);
     }
 
     public void CoinCollected(){

@@ -30,9 +30,6 @@ public class ItemJumpManager : MonoBehaviour
         {
             yPosition -= 0.65f;
         }
-        Debug.Log("yPosition : " + yPosition);
-        Debug.Log("numofwood % 6 = " + numOfWood % 6);
-        Debug.Log("numofwood / 6 = " + numOfWood / 6);
     }
     public void AddNewTimber(Transform itemToAdd, Transform itemHolderPoint, float jumpPosition, int numOfTimber)
     {

@@ -2627,9 +2627,49 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
+      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
+      propertyPath: OnCoinCollected.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
+      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
+      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 278087379}
+    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
+      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
+      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateCoinText
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
       propertyPath: OnCoinCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 278087379}
+    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
+      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
+        type: 3}
+      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3126115745227504381, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
       propertyPath: m_RootOrder

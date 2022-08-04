@@ -17,7 +17,7 @@ public class BuyArea : MonoBehaviour
     }
 
     public void Buy(int goldAmount){
-        if (progress >= 1)
+        if (progress == 1)
         {
             this.GetComponent<BoxCollider>().enabled = false;
             buyGameObject.SetActive(false);
@@ -30,6 +30,19 @@ public class BuyArea : MonoBehaviour
             progress = (float)currentMoney / (float)cost;
             progressImage.fillAmount = progress;
             coinText.text = currentMoney.ToString() + "/" + cost.ToString();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        BuyManager buyManager = other.GetComponent<BuyManager>();
+        if (buyManager != null)
+        {
+            if(buyManager.numOfCoins >= 1)
+            {
+                buyManager.BuyProcess();
+                Buy(1);
+            }
         }
     }
 }

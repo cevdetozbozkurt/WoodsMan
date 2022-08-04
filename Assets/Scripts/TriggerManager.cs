@@ -15,12 +15,11 @@ public class TriggerManager : MonoBehaviour
 
     public delegate void OnGiveTimberArea();
     public static event OnGiveTimberArea OnGiveTimber;
-
+    /*
     public delegate void OnBuyArea();
     public static event OnBuyArea OnBuyingSawmill;
-    public static event OnBuyArea OnBuyingFurniture;
     public static BuyArea areaToBuy;
-
+    */
     
 
     [SerializeField]
@@ -88,10 +87,12 @@ public class TriggerManager : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other) {
+        /*
         if(other.gameObject.CompareTag("BuyArea")){
             OnBuyingSawmill();
             areaToBuy = other.GetComponent<BuyArea>();
         }
+        */
         if(other.gameObject.CompareTag("TimberArea")){
             isCollecting = true;
         }
@@ -129,9 +130,11 @@ public class TriggerManager : MonoBehaviour
         {
             isCollectingChair = false;
         }
+        /*
         if (other.CompareTag("BuyArea")){
             areaToBuy = null;
         }
+        */
     }
 
     private void Update()
