@@ -26,7 +26,7 @@ public class TreeController : MonoBehaviour
     IEnumerator SetTreeHealt()
     {
         crrunning = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         treeHealt = 3;
         gameObject.GetComponent<Collider>().enabled = true;
         gameObject.GetComponentInParent<MeshRenderer>().enabled = true;
@@ -45,7 +45,7 @@ public class TreeController : MonoBehaviour
 
             Vector3 woodRange = new Vector3(Random.Range(woodPositionx + 1, woodPositionx - 1), 1.54836f, Random.Range(woodPositionz + 1, woodPositionz - 1));
 
-            yield return new WaitForSeconds(2.4f);
+            yield return new WaitForSeconds(1.5f);
 
             if (anims.isPlayerIn)
             {

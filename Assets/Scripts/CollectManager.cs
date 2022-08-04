@@ -52,7 +52,8 @@ public class CollectManager : MonoBehaviour
 
 
     void GetTimber(){
-        if(timberList.Count <= timberLimit){
+        if(createTimberManager.timberList.Count != 0)
+        {
             timberList.Add(createTimberManager.timberList.Last());
             createTimberManager.timberList.RemoveAt(createTimberManager.timberList.Count - 1);
             itemJumpManager.AddNewTimber(timberList[timberList.Count -1].transform,timberPoint,0.065f,timberList.Count);
@@ -60,7 +61,7 @@ public class CollectManager : MonoBehaviour
     }
 
     public void GetWood(){
-        if(woodList.Count <= woodLimit){
+        if(woodList.Count != woodLimit){
             woodList.Add(triggerManager.wood);
             triggerManager.wood.GetComponent<CapsuleCollider>().enabled = false;
             itemJumpManager.AddNewWood(triggerManager.wood.transform,woodPoint,0.25f,woodList.Count);
@@ -69,7 +70,7 @@ public class CollectManager : MonoBehaviour
 
     public void GetChair()
     {
-        if(chairList.Count <= chairLimit)
+        if(chairList.Count != chairLimit && createChair.itemList.Count != 0)
         {
             chairList.Add(createChair.itemList.Last());
             createChair.itemList.Remove(createChair.itemList.Last());
@@ -83,7 +84,7 @@ public class CollectManager : MonoBehaviour
 
     void GiveWood(){
         if(woodList.Count > 0){
-            itemJumpManager.AddNewWood(woodList[woodList.Count-1].transform,giveWoodPoint,0.85f,sawMillManager.sawMillWoods.Count);
+            itemJumpManager.AddNewWoodForSawmill(woodList[woodList.Count-1].transform,giveWoodPoint,0.85f,sawMillManager.sawMillWoods.Count,0);
             sawMillManager.sawMillWoods.Add(woodList[woodList.Count - 1]);
             woodList.Remove(woodList.Last());
         }

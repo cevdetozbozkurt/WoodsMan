@@ -18,18 +18,21 @@ public class ItemJumpManager : MonoBehaviour
     }
     public void AddNewWoodForSawmill(Transform itemToAdd, Transform itemHolderPoint, float jumpPosition, int numOfWood, float yPosition)
     {
-
+        
         itemToAdd.DOJump(itemHolderPoint.position + new Vector3(0, jumpPosition, 0), 1f, 1, 1).OnComplete(
             () => {
                 itemToAdd.SetParent(itemHolderPoint, true);
-                itemToAdd.localPosition = new Vector3(0, (jumpPosition * numOfWood)%6, 0);
+                itemToAdd.localPosition = new Vector3(0, jumpPosition * (numOfWood%6), yPosition);
                 itemToAdd.localRotation = Quaternion.identity;
             }
         );
-        if(numOfWood%6 == 0)
+        if(numOfWood%6 == 0 && numOfWood/6 > 0)
         {
-            yPosition += 0.65f;
+            yPosition -= 0.65f;
         }
+        Debug.Log("yPosition : " + yPosition);
+        Debug.Log("numofwood % 6 = " + numOfWood % 6);
+        Debug.Log("numofwood / 6 = " + numOfWood / 6);
     }
     public void AddNewTimber(Transform itemToAdd, Transform itemHolderPoint, float jumpPosition, int numOfTimber)
     {
