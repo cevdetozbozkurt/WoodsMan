@@ -5,16 +5,16 @@ using UnityEngine;
 public class TriggerManager : MonoBehaviour
 {
     public delegate void OnCollectTimberArea();
-    public static event OnCollectTimberArea OnTimberCollect;
+    public event OnCollectTimberArea OnTimberCollect;
 
     public delegate void OnCollectChairArea();
-    public static event OnCollectChairArea OnChairCollect;
+    public event OnCollectChairArea OnChairCollect;
 
     public delegate void OnGiveWoodArea();
-    public static event OnGiveWoodArea OnGiveWood;
+    public event OnGiveWoodArea OnGiveWood;
 
     public delegate void OnGiveTimberArea();
-    public static event OnGiveTimberArea OnGiveTimber;
+    public event OnGiveTimberArea OnGiveTimber;
     /*
     public delegate void OnBuyArea();
     public static event OnBuyArea OnBuyingSawmill;

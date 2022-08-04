@@ -36,18 +36,18 @@ public class CollectManager : MonoBehaviour
     }
 
     private void OnEnable() {
-        TriggerManager.OnTimberCollect += GetTimber; 
-        TriggerManager.OnGiveWood += GiveWood;
-        TriggerManager.OnGiveTimber += GiveTimber;
-        TriggerManager.OnChairCollect += GetChair;
+        triggerManager.OnTimberCollect += GetTimber;
+        triggerManager.OnGiveWood += GiveWood;
+        triggerManager.OnGiveTimber += GiveTimber;
+        triggerManager.OnChairCollect += GetChair;
         
     }
 
     private void OnDisable() {
-        TriggerManager.OnTimberCollect -= GetTimber;
-        TriggerManager.OnGiveWood -= GiveWood;
-        TriggerManager.OnGiveTimber -= GiveTimber;
-        TriggerManager.OnChairCollect -= GetChair;
+        triggerManager.OnTimberCollect -= GetTimber;
+        triggerManager.OnGiveWood -= GiveWood;
+        triggerManager.OnGiveTimber -= GiveTimber;
+        triggerManager.OnChairCollect -= GetChair;
     }
 
 

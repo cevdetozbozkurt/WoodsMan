@@ -1643,12 +1643,12 @@ PrefabInstance:
     - target: {fileID: 3180552905424856809, guid: c4862d80489f2a64cb2dc438f50a1550,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.07
+      value: 1.767
       objectReference: {fileID: 0}
     - target: {fileID: 3180552905424856809, guid: c4862d80489f2a64cb2dc438f50a1550,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.92
+      value: 58.17
       objectReference: {fileID: 0}
     - target: {fileID: 3180552905424856809, guid: c4862d80489f2a64cb2dc438f50a1550,
         type: 3}
@@ -1690,8 +1690,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuyNewFurniture (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3180552906666253226, guid: c4862d80489f2a64cb2dc438f50a1550, type: 3}
+    - target: {fileID: 3181655287250767766, guid: c4862d80489f2a64cb2dc438f50a1550,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4862d80489f2a64cb2dc438f50a1550, type: 3}
 --- !u!114 &1588083405 stripped
 MonoBehaviour:
@@ -2627,49 +2631,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
-      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
-        type: 3}
-      propertyPath: OnCoinCollected.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
-        type: 3}
-      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
-        type: 3}
       propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 278087379}
-    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
-        type: 3}
-      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
-        type: 3}
-      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateCoinText
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
-        type: 3}
-      propertyPath: OnCoinCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 278087379}
-    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
-        type: 3}
-      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3126115745227504379, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
-        type: 3}
-      propertyPath: OnBuying.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3126115745227504381, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
       propertyPath: m_RootOrder
@@ -2678,17 +2642,17 @@ PrefabInstance:
     - target: {fileID: 3126115745227504381, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.52
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3126115745227504381, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.07
+      value: 1.788
       objectReference: {fileID: 0}
     - target: {fileID: 3126115745227504381, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.95
+      value: 58.61
       objectReference: {fileID: 0}
     - target: {fileID: 3126115745227504381, guid: ff548f0ad25a5dc4d8549fde49ed9ee7,
         type: 3}
@@ -2752,12 +2716,12 @@ PrefabInstance:
     - target: {fileID: 3180552905424856809, guid: c4862d80489f2a64cb2dc438f50a1550,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.07
+      value: 1.767
       objectReference: {fileID: 0}
     - target: {fileID: 3180552905424856809, guid: c4862d80489f2a64cb2dc438f50a1550,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 69.73
+      value: 69.22
       objectReference: {fileID: 0}
     - target: {fileID: 3180552905424856809, guid: c4862d80489f2a64cb2dc438f50a1550,
         type: 3}
@@ -2804,6 +2768,11 @@ PrefabInstance:
       propertyPath: OnCoinCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 278087379}
+    - target: {fileID: 3181655287250767766, guid: c4862d80489f2a64cb2dc438f50a1550,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4862d80489f2a64cb2dc438f50a1550, type: 3}
 --- !u!1001 &8986002055752787616

@@ -306,6 +306,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBuying:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3180552905730064407
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +602,7 @@ PrefabInstance:
     - target: {fileID: 652969251277216024, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.54171455
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 652969251277216024, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}
