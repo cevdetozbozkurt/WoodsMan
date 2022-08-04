@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 697709008448521865}
   - component: {fileID: 3335537763615961667}
   - component: {fileID: 4146584137678483137}
-  - component: {fileID: 1328946676474642349}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Wood
@@ -99,16 +98,3 @@ CapsuleCollider:
   m_Height: 9.03447
   m_Direction: 0
   m_Center: {x: 0.07429769, y: 1.075388, z: 0}
---- !u!114 &1328946676474642349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3840103305641808790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e9a0a8b3f67eb4ea9ec673c339422c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cltr: {fileID: 0}

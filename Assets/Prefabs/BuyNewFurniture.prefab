@@ -551,10 +551,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.07
       objectReference: {fileID: 0}
+    - target: {fileID: 648633714205988464, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 648633714450852728, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}
       propertyPath: m_TagString
       value: TakingChairArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633715366245083, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.95
       objectReference: {fileID: 0}
     - target: {fileID: 649769904809558602, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}
@@ -631,7 +641,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 648633714205988470, guid: 7dc217c99b9dc12468b425d283af74f3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7dc217c99b9dc12468b425d283af74f3, type: 3}
 --- !u!1 &3181655287250767766 stripped
 GameObject:

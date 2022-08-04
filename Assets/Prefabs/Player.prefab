@@ -54,14 +54,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638739838}
-  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -0, y: -0.24, z: -0.669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2488491348930719555}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!1 &114154980586161960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,9 +2667,7 @@ GameObject:
   - component: {fileID: 8880544585164970530}
   - component: {fileID: 3305119769475874904}
   - component: {fileID: 8986002057078344262}
-  - component: {fileID: 8986002057078344265}
   - component: {fileID: 8986002057078344264}
-  - component: {fileID: 3305119769475874905}
   - component: {fileID: 3305119769475874906}
   - component: {fileID: 5866666020968081151}
   - component: {fileID: 5866666020968081157}
@@ -2735,19 +2733,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &8986002057078344265
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8103621231879028888}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.1904905, z: 1}
-  m_Center: {x: 0, y: 1.0952452, z: 0}
 --- !u!114 &8986002057078344264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2763,26 +2748,6 @@ MonoBehaviour:
   rb: {fileID: 8986002057078344262}
   joystick: {fileID: 0}
   speed: 5
---- !u!114 &3305119769475874905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8103621231879028888}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55ae283995c60c6498775ffc6e3d3f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  woodHolderTransform: {fileID: 8986002056162303913}
-  timberHolderTransform: {fileID: 1638739839}
-  numOfWoodHolding: 0
-  numOfTimberHolding: 0
-  ChairHolderTransform: {fileID: 722548668}
-  Wood: []
-  Timber: []
-  Chair: []
 --- !u!114 &3305119769475874906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2829,8 +2794,10 @@ MonoBehaviour:
   chairList: []
   woodList: []
   createTimberManager: {fileID: 0}
+  createChair: {fileID: 0}
   triggerManager: {fileID: 5866666020968081158}
   sawMillManager: {fileID: 0}
+  furniture: {fileID: 0}
   woodPref: {fileID: 3840103305641808790, guid: 146bc8f82f07a9c43b982270e7fd2b57,
     type: 3}
   timberPref: {fileID: 7280292507204554333, guid: 406114f7ae2bb2841943eb1f2f0c6f0d,
@@ -2841,6 +2808,7 @@ MonoBehaviour:
   timberPoint: {fileID: 1638739839}
   chairPoint: {fileID: 722548668}
   giveWoodPoint: {fileID: 0}
+  giveTimberPoint: {fileID: 0}
   timberLimit: 30
   woodLimit: 30
   chairLimit: 2
@@ -2859,11 +2827,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectManager: {fileID: 5866666020968081157}
   createTimberManager: {fileID: 0}
+  createChairManager: {fileID: 0}
   sawMillManager: {fileID: 0}
+  furniture: {fileID: 0}
   wood: {fileID: 0}
   isCollecting: 0
+  isCollectingChair: 0
   isGiving: 0
-  isCreatingChair: 0
+  isGivingTimber: 0
 --- !u!114 &5866666020968081165
 MonoBehaviour:
   m_ObjectHideFlags: 0
