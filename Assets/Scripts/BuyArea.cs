@@ -21,8 +21,8 @@ public class BuyArea : MonoBehaviour
         {
             this.GetComponent<BoxCollider>().enabled = false;
             buyGameObject.SetActive(false);
-            sawmillGameObject.SetActive(true);
             this.enabled = false;
+            sawmillGameObject.SetActive(true);
         }
         else
         {

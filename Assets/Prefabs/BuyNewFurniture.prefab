@@ -536,6 +536,26 @@ PrefabInstance:
       propertyPath: increasedValueX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714450852728, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: TakingChairArea
+      objectReference: {fileID: 0}
     - target: {fileID: 649769904809558602, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}
       propertyPath: m_Name
@@ -544,7 +564,7 @@ PrefabInstance:
     - target: {fileID: 649769904809558602, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 652969251277216024, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}

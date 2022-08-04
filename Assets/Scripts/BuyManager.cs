@@ -21,8 +21,8 @@ public class BuyManager : MonoBehaviour
         if(TriggerManager.areaToBuy != null){
             if(numOfCoins > 0){
                 TriggerManager.areaToBuy.Buy(1);
-                numOfCoins--;
                 OnCoinCollected.Invoke(this);
+                numOfCoins--;
             }
         }
     }
