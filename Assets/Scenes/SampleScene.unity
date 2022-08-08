@@ -2811,6 +2811,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 722548668, guid: 7b049d6ff4565d74f85ee344a5a0899d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.77
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666020968081157, guid: 7b049d6ff4565d74f85ee344a5a0899d,
         type: 3}
       propertyPath: furniture
