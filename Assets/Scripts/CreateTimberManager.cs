@@ -41,7 +41,7 @@ public class CreateTimberManager : MonoBehaviour
                 temp.transform.SetParent(exitPoint);
                 timberList.Add(temp);
                 yield return new WaitForSeconds(1f);
-                if (((float)timberList.Count % 5) == 0) increasedPositionY += increasedValueY;
+                if ((timberList.Count % 5) == 0) increasedPositionY += increasedValueY;
                 GameObject temp2 = Instantiate(itemPrefab);
                 temp2.transform.position = new Vector3(exitPoint.position.x, increasedPositionY, exitPoint.position.z + (0.16f * ((float)timberList.Count % 5)));
                 temp2.transform.localRotation = Quaternion.Euler(itemRotation);
@@ -49,7 +49,8 @@ public class CreateTimberManager : MonoBehaviour
                 timberList.Add(temp2);
                 yield return new WaitForSeconds(1f);
                 RemoveLast(sawMillManager.sawMillWoods);
-                if(sawMillManager.sawMillWoods.Count == 0) isWorking = false;
+                if (sawMillManager.sawMillWoods.Count == 0) isWorking = false;
+                if(timberList.Count < 1) increasedPositionY = exitPoint.position.y;
             }
             yield return new WaitForSecondsRealtime(0.5f);
         }

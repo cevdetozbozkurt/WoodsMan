@@ -21,6 +21,9 @@ TagManager:
   - ChairArea
   - GiveWoodPosition
   - TakingChairArea
+  - TimberVerArea
+  - DeskArea
+  - TakingDeskArea
   layers:
   - Default
   - TransparentFX

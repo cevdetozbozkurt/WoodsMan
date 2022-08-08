@@ -277,7 +277,7 @@ MonoBehaviour:
   sawmillGameObject: {fileID: 3181655287250767766}
   buyGameObject: {fileID: 3180552905789202836}
   progress: 0
-  cost: 6
+  cost: 1
   currentMoney: 0
 --- !u!114 &3180552905424856822
 MonoBehaviour:
@@ -539,6 +539,11 @@ PrefabInstance:
       propertyPath: increasedValueX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802022, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: TimberVerArea
+      objectReference: {fileID: 0}
     - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -553,6 +558,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 648633714023802023, guid: 7dc217c99b9dc12468b425d283af74f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 648633714205988464, guid: 7dc217c99b9dc12468b425d283af74f3,
         type: 3}

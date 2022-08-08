@@ -2793,11 +2793,14 @@ MonoBehaviour:
   timberList: []
   chairList: []
   woodList: []
+  deskList: []
   createTimberManager: {fileID: 0}
   createChair: {fileID: 0}
+  createDesk: {fileID: 0}
   triggerManager: {fileID: 5866666020968081158}
   sawMillManager: {fileID: 0}
   furniture: {fileID: 0}
+  deskManager: {fileID: 0}
   woodPref: {fileID: 3840103305641808790, guid: 146bc8f82f07a9c43b982270e7fd2b57,
     type: 3}
   timberPref: {fileID: 7280292507204554333, guid: 406114f7ae2bb2841943eb1f2f0c6f0d,
@@ -2809,6 +2812,7 @@ MonoBehaviour:
   chairPoint: {fileID: 722548668}
   giveWoodPoint: {fileID: 0}
   giveTimberPoint: {fileID: 0}
+  giveTimberPointDesk: {fileID: 0}
   timberLimit: 30
   woodLimit: 30
   chairLimit: 2
@@ -2830,11 +2834,15 @@ MonoBehaviour:
   createChairManager: {fileID: 0}
   sawMillManager: {fileID: 0}
   furniture: {fileID: 0}
+  createDesk: {fileID: 0}
+  deskManager: {fileID: 0}
   wood: {fileID: 0}
   isCollecting: 0
   isCollectingChair: 0
   isGiving: 0
   isGivingTimber: 0
+  isGivingTimberDesk: 0
+  isCollectingDesk: 0
 --- !u!114 &5866666020968081165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,6 +2870,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBuying:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8150973316009774400
 GameObject:
   m_ObjectHideFlags: 0

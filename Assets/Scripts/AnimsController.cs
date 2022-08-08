@@ -27,7 +27,6 @@ public class AnimsController : MonoBehaviour
         {
             animator.SetBool("isTree", true);
             treecontroller = other.GetComponent<TreeController>();
-            Debug.Log(treecontroller);
             isPlayerIn = true;
             coroutine = StartCoroutine(treecontroller.createWood(this));
         }
@@ -43,7 +42,6 @@ public class AnimsController : MonoBehaviour
     }
     void Update()
     {
-        //Debug.Log(pc.rb.velocity.magnitude);
         if (pc.rb.velocity.magnitude > 0.2f)
         {
             animator.SetBool("isWalk", true);

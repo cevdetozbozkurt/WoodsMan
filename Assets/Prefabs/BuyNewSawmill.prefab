@@ -245,7 +245,7 @@ MonoBehaviour:
   sawmillGameObject: {fileID: 6663199056719934664}
   buyGameObject: {fileID: 3126115745662199006}
   progress: 0
-  cost: 6
+  cost: 1
   currentMoney: 0
 --- !u!114 &3126115745227504379
 MonoBehaviour:

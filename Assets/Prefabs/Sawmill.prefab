@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &116673591
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 116673590}
-  m_Layer: 0
-  m_Name: takeWoodPosition
-  m_TagString: GiveWoodPosition
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &116673590
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116673591}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.7300016, y: -0.5249999, z: -1.0399997}
-  m_LocalScale: {x: 0.2935693, y: 0.29356927, z: 0.2935693}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8958100721477223360}
-  m_RootOrder: 48
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1333333556
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8958100721477223360}
-  m_RootOrder: 49
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2138826270865726880
 BoxCollider:
@@ -100,9 +69,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860429062}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.11, y: 0.12, z: 0}
-  m_LocalScale: {x: 3.5228305, y: 1.7614152, z: 1.5676596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.012, y: -0.514, z: -0.372}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8958100721477223360}
@@ -119,8 +88,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3334582, y: 0.61963606, z: 1.6358795}
+  m_Center: {x: -0.17965806, y: 0.12217224, z: 0.23549652}
 --- !u!1 &395759465197941688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,7 +3109,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8958100721477223360}
-  m_RootOrder: 46
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7111181169367719137
 MeshFilter:
@@ -3767,10 +3736,9 @@ Transform:
   - {fileID: 1430127958972810258}
   - {fileID: 4010912019241833090}
   - {fileID: 4230239120599005344}
-  - {fileID: 566909040479355904}
-  - {fileID: 1860429061}
-  - {fileID: 116673590}
   - {fileID: 1333333555}
+  - {fileID: 1860429061}
+  - {fileID: 566909040479355904}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3822,6 +3790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sawMillWoods: []
+  sawMillWoodsSecond: []
 --- !u!1 &8684035546397622600
 GameObject:
   m_ObjectHideFlags: 0

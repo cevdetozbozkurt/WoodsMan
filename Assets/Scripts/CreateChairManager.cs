@@ -35,7 +35,6 @@ public class CreateChairManager : MonoBehaviour
                 temp.transform.localRotation = Quaternion.Euler(itemRotation);
                 temp.transform.SetParent(exitPoint);
                 itemList.Add(temp);
-                Debug.Log(furniture.FurnitureTimber.Count);
                 if ((itemList.Count % 5) == 0) increasedPositionX -= increasedValueX;
                 if (itemList.Count % 1 == 0)
                 {

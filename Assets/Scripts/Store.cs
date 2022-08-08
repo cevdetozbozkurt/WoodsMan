@@ -14,12 +14,16 @@ public class Store : MonoBehaviour
     private Transform shopTimberHolder;
     [SerializeField]
     private Transform shopChairHolder; //Chair Stack
+    [SerializeField]
+    private Transform shopDeskHolder;
     private CollectManager playerInventory;
     private bool isCreating;
     private Coroutine createCoinCoroutine;
     private Coroutine createCoinCorountineChair;
+    private Coroutine createCoinCorountineDesk;
     public bool isActiveTimber;
     public bool isActiveChair;
+    public bool isActiveDesk;
     private float shopTimberPositionY = 0;
     private float shopChairPositionZ = -0.227f;
     private float shopChairPositionX = 0;
@@ -27,6 +31,8 @@ public class Store : MonoBehaviour
     private List<GameObject> shopTimber = new List<GameObject>();
     [SerializeField]
     private List<GameObject> shopChairs = new List<GameObject>();
+    [SerializeField]
+    private List<GameObject> shopDesk = new List<GameObject>();
 
     private void Start() {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<CollectManager>();
@@ -36,7 +42,7 @@ public class Store : MonoBehaviour
         if(shopTimberHolder.childCount%5 == 0){
             shopTimberPositionY += 0.03f;
         }
-        WoodToAddForInsideFactory.DOJump(shopTimberHolder.position + new Vector3(0.167f * (shopTimberHolder.childCount%5),0,shopTimberPositionY), 2f, 1, 0.1f).OnComplete(
+        WoodToAddForInsideFactory.DOJump(shopTimberHolder.position + new Vector3(shopTimberHolder.childCount ,0,shopTimberPositionY), 2f, 1, 0.1f).OnComplete(
             () =>{
                 WoodToAddForInsideFactory.SetParent(shopTimberHolder, true);
                 WoodToAddForInsideFactory.localPosition = new Vector3(0.167f * (shopTimberHolder.childCount%5),0,shopTimberPositionY);
@@ -47,7 +53,7 @@ public class Store : MonoBehaviour
 
     IEnumerator JumpToShopChair(Transform ChairInShop){
         
-        ChairInShop.DOJump(shopChairHolder.position + new Vector3(1f * (shopChairHolder.childCount%3),-0.169f,shopChairPositionZ), 2f, 1, 0.1f).OnComplete(
+        ChairInShop.DOJump(shopChairHolder.position + new Vector3(shopChairHolder.childCount,-0.169f,shopChairPositionZ), 2f, 1, 0.1f).OnComplete(
             () =>{
                 ChairInShop.SetParent(shopChairHolder, true);
                 ChairInShop.localPosition = new Vector3(1f * (shopChairHolder.childCount%3),-0.169f,shopChairPositionZ);
@@ -56,7 +62,23 @@ public class Store : MonoBehaviour
         );
         yield return new WaitForSeconds(0.5f);
         if(shopChairHolder.childCount % 3 == 0 ){
-            shopChairPositionX = 0;
+            shopChairPositionZ += -0.933f;
+        }
+    }
+
+    IEnumerator JumpToShopDesk(Transform ChairInShop)
+    {
+
+        ChairInShop.DOJump(shopDeskHolder.position + new Vector3(shopDeskHolder.childCount, -0.169f, shopChairPositionZ), 2f, 1, 0.1f).OnComplete(
+            () => {
+                ChairInShop.SetParent(shopDeskHolder, true);
+                ChairInShop.localPosition = new Vector3(1f * (shopDeskHolder.childCount % 3), -0.169f, shopChairPositionZ);
+                ChairInShop.localRotation = Quaternion.identity;
+            }
+        );
+        yield return new WaitForSeconds(0.5f);
+        if (shopDeskHolder.childCount % 3 == 0)
+        {
             shopChairPositionZ += -0.933f;
         }
     }
@@ -67,6 +89,7 @@ public class Store : MonoBehaviour
             shopTimber.Add(playerInventory.timberList.Last());
             playerInventory.timberList.Remove(playerInventory.timberList.Last());
             yield return new WaitForSeconds(0.1f);
+            if (shopTimber.Count <= 1) shopTimberPositionY = 0;
         }
     }
 
@@ -76,6 +99,18 @@ public class Store : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
             shopChairs.Add(playerInventory.chairList.Last());
             playerInventory.chairList.Remove(playerInventory.chairList.Last());
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    IEnumerator GetDesk()
+    {
+        while (playerInventory.deskList.Count > 0)
+        {
+            StartCoroutine(JumpToShopDesk(playerInventory.deskList.Last().transform));
+            yield return new WaitForSeconds(0.3f);
+            shopDesk.Add(playerInventory.deskList.Last());
+            playerInventory.deskList.Remove(playerInventory.deskList.Last());
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -108,6 +143,22 @@ public class Store : MonoBehaviour
             isActiveChair = false;
         }
     }
+    public IEnumerator CreateCoinForDesk()
+    {
+        while (shopDesk.Count > 0)
+        {
+            isActiveDesk = true;
+            for (int i = 0; i < 15; i++)
+            {
+                Instantiate(coin, coinTransform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.2f);
+            }
+            Destroy(shopDesk.Last());
+            shopDesk.Remove(shopDesk.Last());
+            yield return new WaitForSeconds(0.2f);
+            isActiveDesk = false;
+        }
+    }
 
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player"))
@@ -115,6 +166,8 @@ public class Store : MonoBehaviour
             if(playerInventory.timberList.Count > 0) StartCoroutine(GetTimbers());
 
             if(playerInventory.chairList.Count > 0) StartCoroutine(GetChairs());
+
+            if (playerInventory.deskList.Count > 0) StartCoroutine(GetDesk());
 
         }
     }
@@ -124,10 +177,15 @@ public class Store : MonoBehaviour
     }
 
     private void Update() {
-        if(shopTimber.Count > 0 && !isActiveTimber){
+        if(shopTimber.Count > 0 && !isActiveTimber)
+        {
             createCoinCoroutine = StartCoroutine(CreateCoinForTimber());
-        }else if(shopChairs.Count > 0 && !isActiveChair){
+        }else if(shopChairs.Count > 0 && !isActiveChair)
+        {
             createCoinCorountineChair = StartCoroutine(CreateCoinForChair());
+        }else if(shopDesk.Count > 0 && !isActiveDesk)
+        {
+            createCoinCorountineDesk = StartCoroutine(CreateCoinForDesk());
         }
     }
 
