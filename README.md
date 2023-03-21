@@ -1,3 +1,3 @@
 # WoodsMan
 
-Yaz stajında yapmaya çalıştığım hyper casual oyun
+Yaz stajında yapmaya çalıştığım arcade idle oyun
