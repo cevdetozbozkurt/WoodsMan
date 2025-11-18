@@ -42,11 +42,11 @@ public class AnimsController : MonoBehaviour
     }
     void Update()
     {
-        if (pc.rb.velocity.magnitude > 0.2f)
+        if (pc.rb.linearVelocity.magnitude > 0.2f)
         {
             animator.SetBool("isWalk", true);
         }
-        else if (pc.rb.velocity.magnitude == 0)
+        else if (pc.rb.linearVelocity.magnitude == 0)
         {
             animator.SetBool("isWalk", false);
         }

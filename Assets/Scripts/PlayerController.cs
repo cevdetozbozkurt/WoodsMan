@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 movementDirection;
     private void FixedUpdate()
     {
-        rb.velocity = movementDirection * speed;
+        rb.linearVelocity = movementDirection * speed;
     }
     private void Update()
     {
@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviour
 
         if (joystick.Horizontal != 0 || joystick.Vertical != 0)
         {
-            transform.rotation = Quaternion.LookRotation(new Vector3(rb.velocity.x, 0, rb.velocity.z));
+            transform.rotation = Quaternion.LookRotation(new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z));
         }
         if (movementDirection == Vector3.zero)
         {
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
